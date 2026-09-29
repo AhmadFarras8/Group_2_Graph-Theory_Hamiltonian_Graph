@@ -45,7 +45,7 @@ If a path visits every room exactly once, the dungeon is considered valid and th
 
 ## 2. Prerequisites
 
-* C compiler supporting standard C
+* C compiler supporting standard C (online compiler also works)
 * No external libraries are required
 * Terminal or Command Prompt
 * The program automatically generates the dungeon
