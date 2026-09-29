@@ -31,6 +31,44 @@ The number of additional tunnels depends on the number of rooms:
 
 For an invalid dungeon, the rooms are divided into two disconnected groups. Since there is no tunnel connecting the groups, it is impossible to visit every room in one path.
 
+
+Pseudocode
+PROCEDURE GenerateDungeon
+
+    Generate a random number of rooms between 5 and 10
+
+    Randomly choose dungeon type
+        If random choice is VALID:
+            Shuffle the room order
+
+            FOR each consecutive pair of rooms
+                Connect the two rooms with a tunnel
+            END FOR
+
+            Determine the number of extra tunnels
+                If rooms = 5 or 6, add 1 extra tunnel
+                If rooms = 7 or 8, add 2 extra tunnels
+                If rooms = 9 or 10, add 3 extra tunnels
+
+            Add random extra tunnels
+                Do not add duplicate tunnels
+        ELSE:
+            Split the rooms into two groups
+
+            Connect the rooms inside the first group
+
+            Connect the rooms inside the second group
+
+            Do not connect the two groups
+        END IF
+
+    Display the number of rooms
+    Display all rooms
+    Display all tunnels
+
+END PROCEDURE
+
+
 ### Dungeon Validator
 
 The Dungeon Validator checks whether the generated dungeon contains a Hamiltonian Path.
@@ -40,6 +78,55 @@ The validator uses a backtracking algorithm to find all possible Hamiltonian Pat
 
 When a room is added to the path, it is marked as visited. If the current path cannot continue, the algorithm backtracks and tries another possible route.
 If a path visits every room exactly once, the dungeon is considered valid and the path is displayed. If no Hamiltonian Path is found, the dungeon is considered invalid.
+
+
+Pseudocode
+PROCEDURE ValidateDungeon
+
+    foundPath ← FALSE
+
+    FOR each room as a starting room
+        Mark all rooms as unvisited
+        Clear the current path
+
+        Add the starting room to the path
+        Mark the starting room as visited
+
+        FindPaths(starting room)
+
+    END FOR
+
+    IF foundPath = TRUE
+        Print "Dungeon is VALID"
+    ELSE
+        Print "Dungeon is INVALID"
+    END IF
+
+END PROCEDURE
+
+
+PROCEDURE FindPaths(currentRoom)
+
+    IF number of rooms in path = total number of rooms
+        Print the current path
+        foundPath ← TRUE
+        RETURN
+    END IF
+
+    FOR each room connected to currentRoom
+        IF the room has not been visited
+            Mark the room as visited
+            Add the room to the path
+
+            FindPaths(room)
+
+            Remove the room from the path
+            Mark the room as unvisited
+        END IF
+    END FOR
+
+END PROCEDURE
+
 
 ---
 
@@ -192,8 +279,8 @@ AI was used during the preparation of this assignment as a supporting tool to un
    
 5. "design the pseudo code for the generator and validator algorithm"
    
-6. "now what should i do to build the structure for the c solutions that easy to understand
-    and also have 50/50 chanche of valid and invalid path"
+6. "now what should i do to build the structure for the c solution that's easy to understand
+    and also have 50/50 chance of valid and invalid path"
 
 7. "great, now can you review and paraphrase it?"
 
