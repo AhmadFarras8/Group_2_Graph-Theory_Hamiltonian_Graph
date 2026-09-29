@@ -32,9 +32,9 @@ The number of additional tunnels depends on the number of rooms:
 For an invalid dungeon, the rooms are divided into two disconnected groups. Since there is no tunnel connecting the groups, it is impossible to visit every room in one path.
 
 
-Pseudocode
-PROCEDURE GenerateDungeon
+#### Pseudocode
 
+    PROCEDURE GenerateDungeon
     Generate a random number of rooms between 5 and 10
 
     Randomly choose dungeon type
@@ -65,8 +65,10 @@ PROCEDURE GenerateDungeon
     Display the number of rooms
     Display all rooms
     Display all tunnels
+    
+    END PROCEDURE
 
-END PROCEDURE
+
 
 
 ### Dungeon Validator
@@ -80,9 +82,10 @@ When a room is added to the path, it is marked as visited. If the current path c
 If a path visits every room exactly once, the dungeon is considered valid and the path is displayed. If no Hamiltonian Path is found, the dungeon is considered invalid.
 
 
-Pseudocode
-PROCEDURE ValidateDungeon
+#### Pseudocode
 
+
+    PROCEDURE ValidateDungeon
     foundPath ← FALSE
 
     FOR each room as a starting room
@@ -102,11 +105,9 @@ PROCEDURE ValidateDungeon
         Print "Dungeon is INVALID"
     END IF
 
-END PROCEDURE
+    END PROCEDURE
 
-
-PROCEDURE FindPaths(currentRoom)
-
+    PROCEDURE FindPaths(currentRoom)
     IF number of rooms in path = total number of rooms
         Print the current path
         foundPath ← TRUE
@@ -125,7 +126,9 @@ PROCEDURE FindPaths(currentRoom)
         END IF
     END FOR
 
-END PROCEDURE
+    END PROCEDURE
+
+
 
 
 ---
