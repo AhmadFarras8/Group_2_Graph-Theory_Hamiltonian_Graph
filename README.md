@@ -16,9 +16,7 @@
 ### Dungeon Generator
 
 The Dungeon Generator creates a dungeon represented as an undirected graph.
-
 Each room is represented as a vertex, while each tunnel is represented as an edge. The number of rooms is randomly generated between 5 and 10.
-
 The generator randomly chooses between generating a valid or invalid dungeon with approximately a 50/50 probability.
 
 For a valid dungeon, the algorithm first shuffles the rooms and connects consecutive rooms. This guarantees that at least one Hamiltonian Path exists. Additional random tunnels are then added to make the dungeon structure more varied.
@@ -38,11 +36,9 @@ For an invalid dungeon, the rooms are divided into two disconnected groups. Sinc
 The Dungeon Validator checks whether the generated dungeon contains a Hamiltonian Path.
 
 A Hamiltonian Path is a path that visits every vertex exactly once.
-
 The validator uses a backtracking algorithm to find all possible Hamiltonian Paths. It starts from every room and recursively tries connected rooms that have not been visited.
 
 When a room is added to the path, it is marked as visited. If the current path cannot continue, the algorithm backtracks and tries another possible route.
-
 If a path visits every room exactly once, the dungeon is considered valid and the path is displayed. If no Hamiltonian Path is found, the dungeon is considered invalid.
 
 ---
@@ -175,9 +171,7 @@ The dungeon is valid because the validator finds Hamiltonian Paths that visit al
 ## 5. Conclusion
 
 The Dungeon Generator & Validator successfully implements the required dungeon generation and validation algorithms.
-
 The generator creates random dungeon structures containing 5–10 rooms and can produce both valid and invalid dungeons. The validator uses backtracking to determine whether a Hamiltonian Path exists.
-
 Through this process, the program is able to generate a dungeon, validate its structure, and display the possible Hamiltonian Paths when the dungeon is valid.
 
 ## 6. AI Tools Usage Disclosure
@@ -198,9 +192,10 @@ AI was used during the preparation of this assignment as a supporting tool to un
    
 5. "design the pseudo code for the generator and validator algorithm"
    
-6. "now what should i do to build the structure for the c solutions?"
+6. "now what should i do to build the structure for the c solutions that easy to understand
+    and also have 50/50 chanche of valid and invalid path"
 
-7. "great, now can you review and combine it?"
+7. "great, now can you review and paraphrase it?"
 
 8. "now what should i put on the readme based on this previous assignment readme format"
 
