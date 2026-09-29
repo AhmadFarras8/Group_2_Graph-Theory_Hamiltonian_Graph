@@ -108,6 +108,7 @@ If a path visits every room exactly once, the dungeon is considered valid and th
     END PROCEDURE
 
     PROCEDURE FindPaths(currentRoom)
+    
     IF number of rooms in path = total number of rooms
         Print the current path
         foundPath ← TRUE
