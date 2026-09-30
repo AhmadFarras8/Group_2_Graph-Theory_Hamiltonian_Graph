@@ -1,4 +1,4 @@
-# Group_2_Graph-Theory_Hamiltonian_Graph
+# Group_2_Graph-Theory_Hamiltonian_Path
 
 # Dungeon Generator & Validator
 
